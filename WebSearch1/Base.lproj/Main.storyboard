@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebSearch1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqG-a0-81w">
+                                <rect key="frame" x="16" y="219" width="361" height="265"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="265" id="aNy-Xv-Q1S"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GLf-7F-n2c">
+                                <rect key="frame" x="120" y="59" width="273" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9HV-xe-fWi"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ez0-lU-ZPA"/>
+                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8e-Me-T5i">
+                                <rect key="frame" x="8" y="67" width="39.666666666666664" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="PMh-fY-n8f"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uef-a1-caK">
+                                <rect key="frame" x="45" y="67" width="39.666666666666657" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="6HS-XK-9cR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D8e-Me-T5i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="2Pj-k3-bEO"/>
+                            <constraint firstItem="GLf-7F-n2c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9iO-ZJ-a5Z"/>
+                            <constraint firstItem="GLf-7F-n2c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="CwQ-1I-jka"/>
+                            <constraint firstItem="CqG-a0-81w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Hl4-OL-WUN"/>
+                            <constraint firstItem="GLf-7F-n2c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IVF-yd-mPT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CqG-a0-81w" secondAttribute="trailing" constant="16" id="Kf9-01-9e4"/>
+                            <constraint firstItem="uef-a1-caK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="LA9-w8-de4"/>
+                            <constraint firstItem="CqG-a0-81w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="V3o-HG-Sno"/>
+                            <constraint firstItem="uef-a1-caK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="qfR-HS-meR"/>
+                            <constraint firstItem="D8e-Me-T5i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="z2X-jn-MI2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="leftButton" destination="D8e-Me-T5i" id="MgC-ZT-mhP"/>
+                        <outlet property="rightButton" destination="uef-a1-caK" id="oMx-tm-uhb"/>
+                        <outlet property="searchBar" destination="GLf-7F-n2c" id="bh1-fq-6vW"/>
+                        <outlet property="webView" destination="CqG-a0-81w" id="Z09-JW-cmq"/>
+                        <outlet property="webView2" destination="CqG-a0-81w" id="oLD-7z-lcb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43.511450381679388" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
